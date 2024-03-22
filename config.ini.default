@@ -1,0 +1,9 @@
+[global]
+siteId=default
+
+[MQTT]
+#hostname=127.0.0.1
+#port=1883
+
+[debug]
+verbose=false
