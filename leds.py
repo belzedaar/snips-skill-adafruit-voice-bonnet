@@ -39,11 +39,11 @@ class LedControl():
                     break
 
             last_led = led
-            for j in range(0, 255, 5):
+            for j in range(0, 256, 5):
                 self.dots[led] = (0,j,0)
                 self.delay_on_state(0.05, "idle")
 
-            for j in range(0, 255, 5):
+            for j in range(0, 256, 5):
                 self.dots[led] = (0,255 - j,0)
                 self.delay_on_state(0.05, "idle")
 
@@ -58,7 +58,7 @@ class LedControl():
 
     def speaking(self):
         while global_state == "speaking":
-            for j in range(0, 255, 5):
+            for j in range(0, 256, 5):
                 self.dots.fill((j, 0, j))
                 self.delay_on_state(0.01, "speaking")
 
