@@ -43,7 +43,7 @@ class LedControl():
                 self.dots[led] = (0,j,0)
                 self.delay_on_state(0.05, "idle")
 
-            for j in range(255):
+            for j in range(0, 255, 5):
                 self.dots[led] = (0,255 - j,0)
                 self.delay_on_state(0.05, "idle")
 
