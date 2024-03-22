@@ -90,7 +90,7 @@ class Skill_AdafruitBonnet:
             return
         
         if self.verbose:
-            print("Got Topic" + msg.topic)
+            print("Got Topic " + msg.topic)
         
         if msg.topic == "hermes/hotword/toggleOn":
             self.leds.set_state("idle")
@@ -98,6 +98,8 @@ class Skill_AdafruitBonnet:
             self.leds.set_state("listening")
         if msg.topic == "hermes/tts/say":
             self.leds.set_state("speaking")
+        if msg.topic == "hermes/tts/sayFinished":
+            self.leds.set_state("idle")    
         
     # --> Register callback function and start MQTT
     def start_blocking(self):
