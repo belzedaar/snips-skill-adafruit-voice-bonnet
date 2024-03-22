@@ -1,7 +1,11 @@
 import asyncio
 import time
 import adafruit_dotstar
+import board
 import random
+
+DOTSTAR_DATA = board.D5
+DOTSTAR_CLOCK = board.D6
 
 global_state = "idle"
 
