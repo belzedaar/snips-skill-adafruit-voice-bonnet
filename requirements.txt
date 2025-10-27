@@ -1,6 +1,7 @@
 requests
 paho-mqtt
 adafruit-circuitpython-dotstar
+wyoming
 
 
 
