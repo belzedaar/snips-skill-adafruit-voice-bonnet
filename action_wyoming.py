@@ -11,6 +11,7 @@ import argparse
 import asyncio
 import logging
 import time
+import partial
 from types import SimpleNamespace
 from pprint import pprint
 
