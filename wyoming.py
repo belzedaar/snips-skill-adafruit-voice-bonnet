@@ -70,21 +70,21 @@ class LEDsEventHandler(AsyncEventHandler):
 
   
 async def main() -> None:
-     """Main entry point."""
+    """Main entry point."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--uri", required=True, help="unix:// or tcp://")
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
 
     args = parser.parse_args()
-     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
+    logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
     _LOGGER.debug(args)
 
     _LOGGER.info("Ready")
     
     # Start server
     server = AsyncServer.from_uri(args.uri)
-
-     try:
+    leds = LedControl()
+    try:
         await server.run(partial(LEDsEventHandler, args, leds))
     except KeyboardInterrupt:
         pass
